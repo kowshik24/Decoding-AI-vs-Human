@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decoding AI vs Human</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6DD5FA, #FF758C);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #fff;
+        }
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        label, input {
+            font-size: 1.2em;
+        }
+        input[type=text] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        input[type=text] {
+            width: 100%; /* Enlarged width */
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: block; /* To ensure it takes the full width */
+        }
+        .result {
+            font-size: 2em; /* Larger font size for result */
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .ai-generated {
+            color: #fff;
+            background-color: red;
+        }
+        .human-generated {
+            color: #fff;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Decoding AI vs Human</h1>
+    {% if result %}
+        <div class="result {{ 'ai-generated' if result == 'AI Generated' else 'human-generated' }}">
+            {{ result }}
+        </div>
+    {% endif %}
+    <form method="post" action="/predict">
+        <label> Enter your text: </label><br>
+        <textarea name="text" id="text" placeholder="Enter your text here" required rows="4" style="width: 100%;"></textarea><br><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
