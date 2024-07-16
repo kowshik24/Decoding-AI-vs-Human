@@ -5,7 +5,7 @@ Decoding AI vs Human is an interactive web application that allows users to put 
 - **Text Classification** - The application classifies the text into two categories: AI or Human.
 
 ## AWS Deployment 🚀
-The application is deployed on AWS EC2 instance. The application is available [here](http://ec2-13-49-44-233.eu-north-1.compute.amazonaws.com:5100/).
+The application is deployed on render. The application is available [here](https://decoding-ai-vs-human.onrender.com/).
 
 📹 Demo video:
 ---
